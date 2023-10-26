@@ -64,26 +64,35 @@ class ItemTugas extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TugasDetail(
-              tugas: tugas,
+    return Card(
+      child: ListTile(
+        title: Text(tugas.title!),
+        subtitle: Text(tugas.description.toString()),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+              icon: Icon(Icons.remove_red_eye),
+              onPressed: () {
+                // Tampilkan detail tugas
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => TugasDetail(
+                      tugas: tugas,
+                    ),
+                  ),
+                );
+              },
             ),
-          ),
-        );
-      },
-      child: Card(
-        child: ListTile(
-          title: Text(tugas.title!),
-          subtitle: Text(tugas.description.toString()),
+           
+          ],
         ),
       ),
     );
   }
 }
+
 
 class ListTugas extends StatelessWidget {
   final List<Tugas>? list;

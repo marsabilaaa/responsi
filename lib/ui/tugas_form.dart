@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsi/bloc/tugas_bloc.dart';
 import 'package:responsi/model/tugas.dart';
 import 'package:responsi/ui/tugas_page.dart';
+import 'package:intl/intl.dart';
+
 
 class TugasForm extends StatefulWidget {
   final Tugas? tugas;
@@ -22,27 +24,7 @@ class _TugasFormState extends State<TugasForm> {
   final _descriptionTugasTextboxController = TextEditingController();
   final _deadlineTextboxController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    isUpdate();
-  }
-
-  isUpdate() {
-    if (widget.tugas != null) {
-      setState(() {
-        judul = "UBAH TUGAS";
-        tombolSubmit = "UBAH";
-        _titleTugasTextboxController.text = widget.tugas!.title!;
-        _descriptionTugasTextboxController.text = widget.tugas!.description!;
-        _deadlineTextboxController.text = widget.tugas!.deadline.toString();
-      });
-    } else {
-      judul = "TAMBAH TUGAS";
-      tombolSubmit = "SIMPAN";
-    }
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,12 +52,12 @@ class _TugasFormState extends State<TugasForm> {
 
   Widget _titleTugasTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "title Tugas"),
+      decoration: const InputDecoration(labelText: "Judul"),
       keyboardType: TextInputType.text,
       controller: _titleTugasTextboxController,
       validator: (value) {
         if (value!.isEmpty) {
-          return "title Tugas harus diisi";
+          return "Judul harus diisi";
         }
         return null;
       },
@@ -84,12 +66,12 @@ class _TugasFormState extends State<TugasForm> {
 
   Widget _descriptionTugasTextField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: "description Tugas"),
+      decoration: const InputDecoration(labelText: "Deskripsi"),
       keyboardType: TextInputType.text,
       controller: _descriptionTugasTextboxController,
       validator: (value) {
         if (value!.isEmpty) {
-          return "description Tugas harus diisi";
+          return "deskripsi harus diisi";
         }
         return null;
       },
@@ -128,7 +110,7 @@ class _TugasFormState extends State<TugasForm> {
 
   Widget _buttonDelete() {
     return OutlinedButton(
-      child: Text("HAPUS"),
+      child: Text("Hapus Tugas"),
       onPressed: () {
         if (widget.tugas != null) {
           hapus();
@@ -183,7 +165,7 @@ class _TugasFormState extends State<TugasForm> {
         showDialog(
           context: context,
           builder: (BuildContext context) => AlertDialog(
-            content: Text("Permintaan hapus data gagal, silahkan coba lagi"),
+            content: Text(" hapus tugas gagal, silahkan coba lagi"),
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(),
