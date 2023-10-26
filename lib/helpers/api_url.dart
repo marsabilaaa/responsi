@@ -1,20 +1,20 @@
  class ApiUrl {
- static const String baseUrl = 'http://192.168.1.9/toko-api/public';
+ static const String baseUrl = 'https://responsi1b.dalhaqq.xyz/api';
 
  static const String registrasi = baseUrl + '/registrasi';
  static const String login = baseUrl + '/login';
- static const String listProduk = baseUrl + '/produk';
- static const String createProduk = baseUrl + '/produk';
+ static const String listAssignments = baseUrl + '/assignments';
+ static const String createAssignments = baseUrl + '/assignments';
 
- static String updateProduk(int id) {
- return baseUrl + '/produk/' + id.toString() + '/update';
+ static String updateAssignments(int id) {
+ return baseUrl + '/assignments/' + id.toString() + '/update';
  }
 
- static String showProduk(int id) {
- return baseUrl + '/produk/' + id.toString();
+ static String showAssignments(int id) {
+ return baseUrl + '/assignments/' + id.toString();
  }
 
- static String deleteProduk(int id) {
- return baseUrl + '/produk/' + id.toString();
+ static String deleteAssignments(int id) {
+ return baseUrl + '/assignments/' + id.toString();
  }
  }

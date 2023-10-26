@@ -1,36 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:tokokita/model/produk.dart';
-import 'package:tokokita/ui/produk_form.dart';
+import 'package:responsi/model/assignments.dart';
+import 'package:responsi/ui/assignments_form.dart';
 
-class ProdukDetail extends StatefulWidget {
-  final Produk? produk;
+class AssignmentsDetail extends StatefulWidget {
+  final Assignments? assignments;
 
-  ProdukDetail({Key? key, this.produk}) : super(key: key);
+  AssignmentsDetail({Key? key, this.assignments}) : super(key: key);
 
   @override
-  _ProdukDetailState createState() => _ProdukDetailState();
+  _AssignmentsDetailState createState() => _AssignmentsDetailState();
 }
 
-class _ProdukDetailState extends State<ProdukDetail> {
+class _AssignmentsDetailState extends State<AssignmentsDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detail Produk Marsa'), // Hapus const pada Text
+        title: Text('Detail Assignments Marsa'), // Hapus const pada Text
       ),
       body: Center(
         child: Column(
           children: [
             Text(
-              "Kode : ${widget.produk!.kodeProduk}",
+              "Kode : ${widget.assignments!.kodeAssignments}",
               style: TextStyle(fontSize: 20.0),
             ),
             Text(
-              "Nama : ${widget.produk!.namaProduk}",
+              "Nama : ${widget.assignments!.namaAssignments}",
               style: TextStyle(fontSize: 18.0),
             ),
             Text(
-              "Harga : Rp. ${widget.produk!.hargaProduk.toString()}",
+              "Harga : Rp. ${widget.assignments!.hargaAssignments.toString()}",
               style: TextStyle(fontSize: 18.0),
             ),
             _tombolHapusEdit(),
@@ -50,7 +50,7 @@ class _ProdukDetailState extends State<ProdukDetail> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProdukForm(produk: widget.produk!),
+                builder: (context) => AssignmentsForm(assignments: widget.assignments!),
               ),
             );
           },
@@ -74,8 +74,8 @@ class _ProdukDetailState extends State<ProdukDetail> {
  Navigator.push(
  context,
  MaterialPageRoute(
- builder: (context) => ProdukForm(
- produk: widget.produk!,
+ builder: (context) => AssignmentsForm(
+ assignments: widget.assignments!,
  )));
  },
  ),

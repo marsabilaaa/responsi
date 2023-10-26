@@ -1,4 +1,4 @@
-package com.example.tokokita
+package com.example.responsi
 
 import io.flutter.embedding.android.FlutterActivity
 

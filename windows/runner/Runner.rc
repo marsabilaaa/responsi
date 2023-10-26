@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "tokokita" "\0"
+            VALUE "FileDescription", "responsi" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "tokokita" "\0"
+            VALUE "InternalName", "responsi" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "tokokita.exe" "\0"
-            VALUE "ProductName", "tokokita" "\0"
+            VALUE "OriginalFilename", "responsi.exe" "\0"
+            VALUE "ProductName", "responsi" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

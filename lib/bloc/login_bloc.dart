@@ -1,8 +1,8 @@
  import 'dart:convert';
 
- import 'package:tokokita/helpers/api.dart';
- import 'package:tokokita/helpers/api_url.dart';
- import 'package:tokokita/model/login.dart';
+ import 'package:responsi/helpers/api.dart';
+ import 'package:responsi/helpers/api_url.dart';
+ import 'package:responsi/model/login.dart';
 
  class LoginBloc {
  static Future<Login> login({String? email, String? password}) async {
